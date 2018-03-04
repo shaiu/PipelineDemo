@@ -6,6 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
+				sh 'pip install flask'
                 sh 'export PYTHONPATH=${PWD};cd test;python -m unittest test_main'
             }
         }
