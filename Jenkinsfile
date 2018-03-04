@@ -6,8 +6,7 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python --version'
-				cat app/main.py
+                sh 'export PYTHONPATH=${PWD};cd test;python -m unittest test_main'
             }
         }
     }
